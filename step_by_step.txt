@@ -1,0 +1,56 @@
+1. Thiết lập dự án
+Issue: Khởi tạo cấu trúc và cấu hình dự án Django
+Issue: Tạo các ứng dụng chính (home, menu, events, blog, contact)
+2. Trang chủ và trang Giới thiệu
+Issue: Phát triển giao diện và bố cục trang chủ
+Issue: Xây dựng trang Giới thiệu và cấu trúc nội dung
+3. Quản lý thực đơn
+Issue: Triển khai model thực đơn và quản lý trong trang quản trị
+Issue: Hiển thị các món trong thực đơn trên trang công khai
+4. Chương trình khuyến mãi và sự kiện
+Issue: Tạo các model cho quản lý sự kiện và khuyến mãi
+Issue: Thiết kế hiển thị sự kiện và khuyến mãi trên frontend
+5. Cảm nhận từ khách hàng
+Issue: Định nghĩa model đánh giá khách hàng và giao diện quản trị
+Issue: Hiển thị mục cảm nhận của khách hàng trên trang web
+6. Blog
+Issue: Triển khai model bài viết blog và giao diện quản trị
+Issue: Hiển thị danh sách và chi tiết bài viết blog
+7. Đặt hàng trực tuyến
+Issue: Định nghĩa model đơn hàng và triển khai giao diện quản trị
+Issue: Tích hợp cổng thanh toán cho đặt hàng trực tuyến
+Issue: Xây dựng giao diện đặt hàng trực tuyến trên frontend
+8. Trang Liên hệ
+Issue: Tạo form liên hệ và logic xử lý backend
+Issue: Nhúng Google Maps để hiển thị vị trí
+9. Tính năng mạng xã hội và thành viên
+Issue: Thêm liên kết mạng xã hội ở đầu và cuối trang
+Issue: Triển khai tính năng đăng ký và đăng nhập thành viên
+Issue: Tạo tính năng đăng ký nhận bản tin qua email
+10. Hoàn thiện và kiểm thử
+Issue: Tối ưu hóa giao diện và trải nghiệm người dùng
+Issue: Tiến hành kiểm thử toàn bộ chức năng
+
+---------------------------------------------------------------
+1. Thiết lập dự án Django cơ bản (Set Up Basic Django Project)
+    Tạo một dự án Django mới, cấu hình môi trường, và thiết lập các file settings cần thiết.
+    Issue: Tạo ứng dụng cho từng chức năng chính (home, menu, events, blog, contact,..)
+        <có thể tạo một app chung hoặc app riêng lẻ tùy quy mô dự án>
+2. Trang chủ và trang Giới thiệu (Home Page and About Page)
+    Thiết kế giao diện trang chủ, bao gồm banner, thông điệp chính và mục giới thiệu nhanh.
+    Issue: Xây dựng trang "Giới thiệu về quán"
+        <cái này mình đã có bootstrap chôm đâu đó trên mạng đem về sài rồi khỏi cần thiết kế UI/UX từ đầu nữa kkk>
+3. Thực đơn (Menu)
+    Issue: Tạo model và trang quản lý thực đơn
+    Tạo model cho các món trong thực đơn (tên món, giá, mô tả, hình ảnh), thiết kế trang quản trị cho phép thêm,
+                                                                                                     sửa, xóa món.
+    Issue: Hiển thị menu trên trang web
+    Thiết kế giao diện trang menu, hiển thị danh sách đồ uống và món ăn kèm theo hình ảnh và giá.                                                                                          
+4. Chương trình khuyến mãi và sự kiện (Promotions and Events)
+5. Cảm nhận từ khách hàng (Customer Testimonials)
+    (review, feedback)
+6. Blog
+7. Đặt hàng trực tuyến (Online Ordering)
+8. Trang Liên hệ (Contact Page)
+9. Kết nối mạng xã hội và đăng ký thành viên (Social Media Integration and Membership Registration)
+10. Hoàn thiện và kiểm thử (Finalization and Testing)
