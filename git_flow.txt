@@ -18,12 +18,9 @@ sau đó Developer vào:
 Sau khi có được nhánh develop
 trên github Leader sẽ: 
     ## giao việc bằng issues trên github tại mục "Issues"
-    ## gắn thẻ, tag tên, trình bày rõ nội dung nhiệm vụ
-    ## lúc này sẽ hiện lên số tag cho issues đó
-    ## khi commit và push codelên github, phải commit đúng với số tag (#?) issues hiện tại
-    ## commit theo trình tự: feature -> develop -> main nhé !!
-    ## lúc pull request cũng phải chú ý rằng bạn sẽ pull requesst commit đó với tư cách của ai main hay develop? 
-    (sửa tư cách pull request trực tiếp trên github bằng thao tác click chuột nhé)
+        ## gắn thẻ, tag tên, trình bày rõ nội dung nhiệm vụ
+        ## lúc này sẽ hiện lên số tag cho issues đó
+
 -------------------------------------------------------------------------------------------
 Developer (ở nhánh develop):
     ## tạo nhánh feature đặt tên liên quan đến tên của issues và số tag issues hiện tại nhé (để dễ nhận biết nhánh)
@@ -45,14 +42,19 @@ Developer (ở nhánh develop):
         ai tạo tính năng gì thì người đó nhớ "Compare & pull request" tính năng của mình ở trên github nhé
         sau khi pull request, github sẽ gửi mail thông báo về cho bên liên quan. (nhớ xem tư cách là main hay develop nhé)
         Chờ người khác vào xác nhận và "Merge pull request" cho mình. 
+
+    ## warning:             
+            ## khi commit và push codelên github, phải commit đúng với số tag (#?) issues hiện tại
+            ## commit theo trình tự: feature -> develop -> main nhé !!
+            ## lúc pull request cũng phải chú ý rằng bạn sẽ pull requesst commit đó với tư cách của ai ? main hay develop? 
 ------------------------------------------------------------------------------------------
 Leader hoặc các developer khác:
     ## sau khi nhận được mail 
     ## vào duyệt bài và "Merge pull request" feature đó ở mục "Pull requests" trên github
-    ## "Confirm merge" nữa là xong
+    ## "Confirm merge" nữa là ok
 -------------------------------------------------------------------------------------
-Sau đây là phần release. 
-Developer:
+tiếp theo là bước release
+Developer (ở nhánh develop):
         "git checkout develop"
     ##  tạo 1 nhánh release
         "git checkout -b <release-số phiên bản> develop"
