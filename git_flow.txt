@@ -1,0 +1,131 @@
+>>>>>> ĐÂY LÀ MEMO VỀ GITFLOW - NHỚ ĐỌC HẾT NHÉ !!!  From AeLagi with love <3 <<<<<<<<<<<<<<   
+
+Đầu tiên git clone về máy. (local)
+----------------------------------------------------------------------------------------
+(Khi dự án chưa có nhánh develop thì)
+Leader:
+    ## tạo nhánh develop (tạo 1 lần xài quài quài):
+        git branch develop
+    ## push nhánh develop lên github
+        git push -u origin develop 
+------------------------------------------------------------------------------------------
+sau đó Developer vào:
+    ## kiểm tra nhánh hiện tại:
+        "git branch"
+    ## di chuyển thử từ nhánh hiện tại vào nhanh develop được chưa:
+        "git checkout develop"
+------------------------------------------------------------------------------------------
+Sau khi có được nhánh develop
+trên github Leader sẽ: 
+    ## giao việc bằng issues trên github tại mục "Issues"
+    ## gắn thẻ, tag tên, trình bày rõ nội dung nhiệm vụ
+    ## lúc này sẽ hiện lên số tag cho issues đó
+    ## khi commit và push codelên github, phải commit đúng với số tag (#?) issues hiện tại
+    ## commit theo trình tự: feature -> develop -> main nhé !!
+    ## lúc pull request cũng phải chú ý rằng bạn sẽ pull requesst commit đó với tư cách của ai main hay develop? 
+    (sửa tư cách pull request trực tiếp trên github bằng thao tác click chuột nhé)
+-------------------------------------------------------------------------------------------
+Developer (ở nhánh develop):
+    ## tạo nhánh feature đặt tên liên quan đến tên của issues và số tag issues hiện tại nhé (để dễ nhận biết nhánh)
+    ## Giả sử issues hiện tại có tên là: Create cart feature và Nghi vào làm cái tính năng cart này:
+        "git checkout -b feature/<tên feaature> develop"
+        ví dụ: "git checkout -b feature/1-nghi-cart-feature develop" 
+    ## viết code trong nhánh tính năng này chỉ mỗi ở máy mình thôi...
+    ## khi code xong xuôi chạy ưng ý hết rồi thì kiểm tra trạng thái hiện tại:
+        "git status"
+    ## sau đó git add:
+        "git add <file name>" hoặc "git add ."    ## nhớ cd vào folder chứa file đó nhá.
+    ## khi commit nhớ đặt tên đính kèm số tag của issues hiện tại nhé:
+        ✖　"git commit -m 'Nguyen add cart model file'"  
+        〇  "git commit -m '#1 - Nguyen - update model cart'"
+    ## và cuối cùng là push lên github:
+        "git push --set-upstream origin <tên feature>"
+        ví dụ: "git push --set-upstream origin feature/1-cart.models.py-file"
+    ## trên github:
+        ai tạo tính năng gì thì người đó nhớ "Compare & pull request" tính năng của mình ở trên github nhé
+        sau khi pull request, github sẽ gửi mail thông báo về cho bên liên quan. (nhớ xem tư cách là main hay develop nhé)
+        Chờ người khác vào xác nhận và "Merge pull request" cho mình. 
+------------------------------------------------------------------------------------------
+Leader hoặc các developer khác:
+    ## sau khi nhận được mail 
+    ## vào duyệt bài và "Merge pull request" feature đó ở mục "Pull requests" trên github
+    ## "Confirm merge" nữa là xong
+-------------------------------------------------------------------------------------
+Sau đây là phần release. 
+Developer:
+        "git checkout develop"
+    ##  tạo 1 nhánh release
+        "git checkout -b <release-số phiên bản> develop"
+        ví dụ: "git checkout -b release-1.0.0 develop"
+    ##  tạo thẻ (tag)
+        "git tag '<số phiên bản>'"
+        ví dụ: "git tag 'v1.0.0'"
+    ## sau đó push lên:
+        "git push --tags"
+        "git merge develop"
+        "git push"
+    ## sau khi "git push" cũng phải lên github để nhớ "Compare & pull request" nhé
+--------------------------------------------------------------------------------------
+Leader (ở nhánh main)
+    ## Trên github:
+        leader vào mục "Pull requests"
+        leader sẽ "Merge pull request" -> "Confirm merge"
+    ## Sau đó leader vào local máy mình:
+        "git checkout main"
+    ## lúc này nhánh main(local) của chúng ta chưa thay đổi gì cả, ta chỉ cần pull về là được
+        "git pull"
+    ## đẩy thẻ tag lên github (nếu release có gắn thẻ)
+        "git tag 'v1.0.0'"
+        "git push --tags
+        "git push"
+
+-----------------------------------------------------------------------------------------------------------
+## khi push vào main rồi tiếp theo chúng ta hãy xóa các nhánh feature hay nhánh release trong máy local của chúng ta đi.
+    "git branch" (kiểm tra nhánh hiện tại)
+## lưu ý khi muốn xóa nhánh gì thì hãy ra khỏi nhánh đó khi xóa nhé !
+
+★　Nếu nhánh bạn muốn xóa chưa được merge, 
+git sẽ báo lỗi và từ chối xóa để tránh mất dữ liệu, ta dùng:
+## Xóa ở local,
+    "git branch -d <release name> (xóa release)"
+    "git branch -d <feature name> (xóa feature)"
+
+## push lên để xóa tính năng, xóa release trên github luôn:
+    "git push origin --delete <release name>"
+    "git push origin --delete <feature name>"
+
+★ Nó sẽ xóa luôn nhánh của bạn ngay cả khi nhánh của bạn chưa được merge, 
+và bỏ qua cảnh báo về khả năng mất dữ liệu, ta dùng:
+    ## cách 1: "git branch -D <feature name>"
+    ## cách 2: "git branch --delete --force <feature name>"
+
+## lấy lại branch đã xóa
+    "git reflog "
+    "git checkout -b restore_fileName idDeletedFileName"
+    ex: "checkout -b restore_"
+
+## xóa remote (xóa ở github)
+    "git push origin -d <release name>"
+    "git push origin -d <feature name>"
+-----------------------------------------------------------------------------------------
+★　hotfixes
+## vào nhánh main
+    "git checkout -b hotfixes"
+## lúc này mình đang ở nhánh hotfixes:
+## khúc này mình sửa code, đoạn bị lỗi gì đó sau khi fix xong
+    "git add <tên file vừa fix> or git add ."
+    ví dụ: "git commit -m '#4 - Nguyên - fix product'"
+    "git push --set-upstream origin hotfixes"
+# sau khi push xong thì lên github chúng ta sẽ:
+    "Compare & pull request" -> "Merge pull request" 
+    ## Chờ người cấp cao hơn để check? Nếu với tư cách là một người đứng ra
+    để fix lỗi thì thường là những dev có kinh nghiệm or quản lý, họ sẽ tự push tự merge luôn
+
+# bước tiếp theo là vào local git checkout về nhanh main
+    "git checkout main"
+    "git pull"
+    "git branch -d hotfixes"
+-------------------------------
+sau khi hoàn thành tất cả thì trong local của chúng ta chỉ còn mỗi 2 nhánh main và develop là ok!
+    "git branch"
+--------------------------------
