@@ -1,0 +1,34 @@
+<phần cơ bản>
+
+Khởi tạo dự án mới (project hay còn gọi là file root):
+    django-admin startproject <project_name>   
+    *lưu ý: hãy đặt tên cho đúng logic với những gì mình đang làm vì trong tương lai...
+            ...không chỉ để bản thân mà còn để người khác review code của mình dễ dàng hơn nhóe! Thân oái èn quit thắng!
+Khởi tạo ứng dụng (app) mới:
+    python manage.py startapp <app_name>
+Chạy server (localhost):
+    python manage.py runserver
+Tạo migration cho các thay đổi trong model (di chuyển dữ liệu):
+    python manage.py makemigrations <app_name>
+Áp dụng migration vào cơ sở dữ liệu:
+    python manage.py migrate
+Tạo superuser để truy cập trang quản trị: 
+    python manage.py createsuperuser
+--------------------------------------------------
+<phần tham khảo>
+
+Kiểm tra code và tìm lỗi trong dự án:
+    python manage.py check
+Mở Django shell để tương tác với các model:
+    python manage.py shell
+Thu thập file tĩnh vào thư mục STATIC_ROOT (cho môi trường production):
+    python manage.py collectstatic
+Tải dữ liệu từ file JSON, XML hoặc YAML vào database:
+    python manage.py loaddata <data_file>
+Xuất dữ liệu từ database ra file JSON, XML hoặc YAML:
+    python manage.py dumpdata <app_name>.<model_name> > <output_file>
+Kiểm thử và đánh giá (Chạy toàn bộ các bài kiểm thử):
+    python manage.py test
+Xóa tất cả dữ liệu và khôi phục trạng thái database (áp dụng cho các thay đổi lớn):
+    python manage.py flush
+---------------------------------------------------
