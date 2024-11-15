@@ -11,12 +11,4 @@ This project is a Django-based web application for a coffee shop. It includes es
 - **Contact**: A page providing the shop's location, hours of operation, and a contact form for inquiries.
 - **Account**: A membership system that allows users to create accounts, log in, and track their orders and rewards.
 
-## Installation
 
-### 1. Clone the Repository
-
-```bash
-git clone <repository_url>
-cd <repository_folder>
-
-Make sure you have Python and Django installed. If not, install them first.
