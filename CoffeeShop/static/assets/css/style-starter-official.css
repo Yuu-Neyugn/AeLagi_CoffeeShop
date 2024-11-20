@@ -10665,6 +10665,98 @@ a.title-head:hover {
 @media (max-width: 480px) {
   .w3l-footer-29-main .footer-list-29 h2 a {
     font-size: 25px; } }
+/* chatbox */
+#chatButton {
+  outline: none;
+  z-index: 99;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#chatButton .fa-comments {
+  z-index: 99;
+  font-size: 20px;
+}
+
+#chatBox {
+
+  z-index: 99;
+  display: none; 
+  position: fixed; 
+  bottom: 80px; 
+  right: 20px; 
+  width: 300px; 
+  height: 300px; 
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  background-color: #fff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatBoxTitle{
+  z-index: 99;
+  padding: 10px; 
+  background: var(--primary); 
+  color: #fff; 
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
+}
+
+.chatBoxCloseButton{
+  z-index: 99;
+  float: right; 
+  background: none; 
+  border: none; 
+  color: #fff; 
+  font-size: 16px; 
+  cursor: pointer;
+}
+
+.chatBoxAdmin{
+  padding: 10px; 
+  height: 204px; 
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.chatBoxUser{
+  z-index: 99;
+  padding: 7px; 
+  border-top: 1px solid #ccc;
+}
+
+.chatBoxUserInput{
+  z-index: 99;
+  width: 80%; 
+  padding: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+}
+
+.chatBoxUserButton{
+  z-index: 99;
+  padding: 5px 10px; 
+  background: var(--primary); 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+
+/* //chatbox */
+
+
+
 
 .w3l-footer-29-main #movetop {
   display: none;

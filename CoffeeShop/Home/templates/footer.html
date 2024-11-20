@@ -1,3 +1,5 @@
+{% load static %}
+
 <section class="w3l-footer-29-main">
     <div class="footer-29 py-5">
       <div class="container py-lg-4 py-sm-3">
@@ -43,11 +45,47 @@
             href="https://w3layouts.com">W3layouts</a></p>
       </div>
     </div>
-  
+    
+    <!-- chat box -->
+    <button onclick="toggleChatBox()" id="chatButton" title="Chat with us">
+      <span class="fa fa-comments"></span>
+    </button>
+
+    <!-- Chat box container -->
+    <div id="chatBox" >
+      <div class="chatBoxTitle">
+        <span>Chat with us</span>
+        <button class="chatBoxCloseButton" onclick="toggleChatBox()">✕</button>
+      </div>
+      
+      <div class="chatBoxAdmin">
+        <p>Welcome to our coffee shop! How can we assist you today?</p>
+        <!-- You can integrate your chat system here -->
+      </div>
+
+      <div class="chatBoxUser">
+        <input class="chatBoxUserInput" type="text" placeholder="Type your message here...">
+        <button class="chatBoxUserButton">Send</button>
+      </div>
+    </div>
+
+    <script>
+      function toggleChatBox() {
+        const chatBox = document.getElementById("chatBox");
+        if (chatBox.style.display === "none" || chatBox.style.display === "") {
+          chatBox.style.display = "block";
+        } else {
+          chatBox.style.display = "none";
+        }
+      }
+    </script>
+    <!-- //chat box -->
+
     <!-- move top -->
     <button onclick="topFunction()" id="movetop" title="Go to top">
       <span class="fa fa-angle-up"></span>
     </button>
+
     <script>
       // When the user scrolls down 20px from the top of the document, show the button
       window.onscroll = function () {
